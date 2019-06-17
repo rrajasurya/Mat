@@ -1,0 +1,68 @@
+<div class="limiter">
+        <!-- <div class="alert alert-danger container" role="alert" id="errorMsg">
+                Please check your userName & Password
+              </div> -->
+    <div class="container-login100">
+        <div class="wrap-login100">
+                
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" #userName formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Email"/>
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" #password formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password"/>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox"> Show Password
+                </div>
+
+                <div class="form-group">
+                    <button (click)="loginFunction(userName.value , password.value)" class="login100-form-btn">Login</button><br>
+                    <button [routerLink]="['/register']" id="registerBtn" class="btn btn-link">Register</button>
+                </div>
+                <!-- <span id="errorMsg" style="color: red; visibility: hidden;"><p>* Please check Username & Password</p></span> -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="loginForm">
+<h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Login</button>
+        <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+    </div>
+</form>
+</div> -->
